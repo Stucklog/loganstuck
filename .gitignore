@@ -1,0 +1,8 @@
+.DS_Store
+tmp/
+scripts/__pycache__/
+*.pyc
+
+# Private source notes / older local CV export
+Linked In Info.txt
+LS-cv.pdf
