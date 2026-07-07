@@ -570,6 +570,15 @@ h3 {
   font-size: clamp(1.8rem, 3vw, 2.6rem);
 }
 
+.resume-subheading {
+  margin: 32px 0 16px;
+  font-size: 1.15rem;
+}
+
+.resume-section h2 + .resume-subheading {
+  margin-top: 0;
+}
+
 .timeline {
   display: grid;
   gap: 26px;

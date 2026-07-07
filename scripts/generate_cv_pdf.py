@@ -380,10 +380,13 @@ def build_pdf():
         KeepTogether(
             bullet_list(
             [
+                "Co-Instructor, Nutrition and Infectious Disease, Health Sciences Master's, Vrije Universiteit Amsterdam, 2023.",
                 "Lead Instructor, Introduction to Statistics, Research Master's in Global Health, Vrije Universiteit Amsterdam, 2021 - 2023.",
                 "Co-Instructor, Intermediate Statistics and Epidemiology, Research Master's in Global Health, Vrije Universiteit Amsterdam, 2020 - 2023.",
-                "Co-Instructor, Nutrition and Infectious Disease, Health Sciences Master's, Vrije Universiteit Amsterdam, 2023.",
+                "Co-Instructor, Figure it Out, Applied Research, Research Master's in Global Health, Vrije Universiteit Amsterdam, 2020 - 2023.",
+                "Guest Lecturer, Study Design in Quantitative Research, Department of Tropical Medicine, Tulane University School of Public Health and Tropical Medicine, 2020.",
                 "Designed and led data analysis and GIS workshops for surveillance, monitoring, and evaluation officers in Tanzania and Zanzibar, 2019.",
+                "Guest Lecturer, Surveillance in Malaria Elimination, Department of Tropical Medicine, Tulane University School of Public Health and Tropical Medicine, 2017.",
                 "Co-promotor and methodological mentor for doctoral and master's students.",
             ],
             styles,
@@ -402,17 +405,25 @@ def build_pdf():
     ]
     story.extend(bullet_list(publications, styles))
 
-    story.extend(section("Selected grants, contracts, and consultancies", styles))
+    story.extend(section("Grants, contracts, and consultancies", styles))
     story.append(
         KeepTogether(
             bullet_list(
             [
                 "CEPI, LARISSA II: Novel Rift Valley Fever Vaccine Development, 2024 - Present. Role: Trial feasibility modeller.",
                 "City of Amsterdam, Modelling Deterioration of Amsterdam Quay Walls, 2024 - Present. Role: Primary analyst.",
+                "Mr. Willem Bakhuys Roozeboomstichting, TBPS-Meta: Tuberculosis Prevalence Survey Meta Analyses, 2023. Role: Principal investigator.",
                 "Amsterdam Tuberculosis Center, scTB-Meta: Subclinical Tuberculosis Meta Analyses, 2021 - 2023. Role: Principal investigator.",
+                "EDCTP, CAGE-TB: Cough Audio Triage for Tuberculosis, 2022 - 2023. Role: Cost-effectiveness sub-study lead.",
+                "EDCTP, PreFIT: Predicting the Future: Incipient Tuberculosis, 2021 - 2023. Role: Cost-effectiveness sub-study lead.",
                 "EDCTP, TRiAD: Triage test for all oral DR TB regimen, 2020 - 2023. Role: Cost-effectiveness sub-study lead.",
+                "Wellcome Trust, ROTA-biotic: Measuring the impact of rotavirus vaccines on paediatric antibiotic usage, 2020 - 2023. Role: Statistician.",
+                "USAID, Associate Award: Technical assistance and support for community-based malaria surveillance in Tanzania, 2017 - 2019. Role: Co-investigator for sub-study.",
+                "PATH / MACEPA / Gates Foundation, technical and scientific support to MACEPA activities in Zambia, 2017 - 2019. Role: Analytic and field support.",
+                "USAID, VectorWorks, 2016 - 2019. Role: Analytic and field support.",
                 "Data for Impact, Assessment of the Zimbabwe Assistance Program in Malaria, 2019 - 2020. Role: Evaluation consultant.",
                 "Sightsavers, Schistosomiasis and Helminthiasis School Survey in Guinea-Bissau, 2018. Role: Consultant.",
+                "Sightsavers, Multi-country WASH intervention trial in sub-Saharan Africa, 2017 - 2018. Role: Consultant.",
             ],
             styles,
             )
