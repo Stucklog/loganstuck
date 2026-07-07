@@ -243,11 +243,12 @@ def build_pdf():
     story.extend(section("Core skills", styles))
     story.append(
         p(
-            "Program evaluation; monitoring, evaluation, and learning; epidemiology; biostatistics; "
-            "causal inference; survival analysis; clinical trial simulation; predictive modeling; "
-            "health economics; cost-effectiveness analysis; survey methodology; geospatial analysis; "
-            "infectious disease surveillance; evidence synthesis; stakeholder reporting; R; SAS; "
-            "STATA; QGIS; ArcGIS; ODK; Git; LaTeX.",
+            "Evaluation and MEL: program evaluation, monitoring, evaluation, and learning, "
+            "stakeholder reporting, evidence-to-decision support. Methods: epidemiology, biostatistics, "
+            "causal inference, survival analysis, survey methodology, clinical trial simulation, "
+            "predictive modeling, geospatial analysis. Public health domains: infectious disease "
+            "surveillance, tuberculosis, malaria, vaccine evaluation, implementation research. "
+            "Tools: R, SAS, STATA, QGIS, ArcGIS, ODK, Git, LaTeX.",
             styles["Body"],
         )
     )
@@ -259,10 +260,10 @@ def build_pdf():
             "Applied Statistician",
             "Biometris, Wageningen University and Research | Wageningen, Netherlands",
             [
-                "Provide statistical consulting for internal research projects and industry collaborations.",
-                "Conduct experimental design, data analysis, and predictive modeling across public health, environmental, and industry-related projects.",
-                "Collaborate with researchers, policymakers, and industry partners to develop data-driven solutions.",
-                "Translate complex analytical results into actionable insights and methodologically rigorous recommendations.",
+                "Provide statistical consulting for public health and applied research teams, including multi-country analytics for SHIFT2HEALTH.",
+                "Design analyses, predictive models, and study workflows that connect complex health data to practical decisions.",
+                "Collaborate with researchers, policymakers, and implementation partners to align statistical methods with real-world evidence needs.",
+                "Translate complex analytical results into clear recommendations, reports, and decision-ready outputs.",
             ],
             styles,
         )
@@ -273,10 +274,10 @@ def build_pdf():
             "Epidemiologist and Statistician",
             "Amsterdam Institute for Global Health and Development | Amsterdam, Netherlands",
             [
-                "Designed and conducted analyses for global health research projects, including clinical trials, individual participant data meta-analyses, and program evaluations.",
-                "Applied causal inference, survival analysis, and statistical modeling to assess treatment effectiveness and disease burden.",
-                "Led data-driven evaluations of tuberculosis diagnostics and infectious disease interventions.",
-                "Led economic evaluations of tuberculosis health-care programs and mentored PhD and MSc students.",
+                "Led analyses for global health studies spanning clinical trials, individual participant data meta-analyses, and program evaluations.",
+                "Coordinated and harmonized national TB prevalence survey data across Africa and Asia, contributing to policy-relevant Lancet Infectious Diseases evidence.",
+                "Applied causal inference, survival analysis, survey methods, and statistical modeling to assess infectious disease burden and intervention performance.",
+                "Mentored PhD and MSc students and translated complex findings for manuscripts, collaborators, and public health stakeholders.",
             ],
             styles,
         )
@@ -300,10 +301,10 @@ def build_pdf():
             "Postdoctoral Statistician, Epidemiologist, and Data Scientist",
             "Tulane University School of Public Health and Tropical Medicine | New Orleans, Louisiana",
             [
-                "Conducted malaria program evaluations to assess intervention effectiveness and disease transmission patterns.",
-                "Led statistical analyses and epidemiological modeling to evaluate malaria surveillance and control strategies.",
-                "Provided on-site training for household survey data collection, strengthening methodological rigor and data quality.",
-                "Contributed to grant writing, scientific publications, and capacity-building initiatives in malaria research.",
+                "Conducted malaria program evaluations assessing intervention effectiveness, transmission patterns, and surveillance performance.",
+                "Led epidemiological modeling and statistical analyses that informed malaria control and elimination strategies.",
+                "Provided on-site training for household survey data collection, improving data quality and field implementation rigor.",
+                "Contributed to peer-reviewed publications, grant development, and capacity-building initiatives in malaria research.",
             ],
             styles,
         )
@@ -314,9 +315,9 @@ def build_pdf():
             "Research Assistant",
             "Tulane University School of Public Health and Tropical Medicine | New Orleans, Louisiana",
             [
-                "Led evaluation of reactive case detection for malaria in Zanzibar, including effectiveness and cost-efficiency analyses.",
-                "Synthesized evidence on diagnostic accuracy and geospatial prevalence mapping for malaria transmission patterns.",
-                "Collaborated with local health authorities and global malaria programs to inform implementation strategy.",
+                "Led evaluation of reactive case detection for malaria in Zanzibar, including effectiveness, spatial targeting, and implementation analyses.",
+                "Synthesized evidence on diagnostic accuracy and geospatial prevalence mapping to clarify malaria transmission patterns.",
+                "Collaborated with local health authorities and global malaria programs to translate findings into implementation strategy.",
             ],
             styles,
         )
@@ -358,11 +359,6 @@ def build_pdf():
             "Provided methodological guidance on study design, data harmonization, statistical modeling, interpretation, and manuscript development for a Lancet Microbe study.",
         ),
         (
-            "Drug-Resistant TB Diagnostic Economic Evaluation",
-            "2021 - 2023 | CAPRISA 094 TRIAD study",
-            "Led cost-effectiveness and budget impact modeling for Xpert MTB/XDR implementation in multi-country drug-resistant TB care.",
-        ),
-        (
             "Trachoma Prevention Program Evaluation",
             "2020 - 2021 | Tulane University and Sightsavers",
             "Conducted design-adjusted analysis and supported reporting for facial cleanliness and environmental improvement interventions across Malawi, Tanzania, and Uganda.",
@@ -375,17 +371,7 @@ def build_pdf():
         (
             "Reactive Case Detection in Zanzibar",
             "2016 - 2019 | Tulane University",
-            "Led epidemiological, spatial, and economic analyses of malaria reactive case detection effectiveness, cost, and alternative surveillance strategies.",
-        ),
-        (
-            "Tanzania School Net Programme",
-            "2016 - 2019 | Tulane University",
-            "Supported survey design, field team training, data quality monitoring, and statistical analysis of school-based LLIN distribution for malaria prevention.",
-        ),
-        (
-            "Ethiopia Malaria Indicator Survey",
-            "2016 | Tulane University",
-            "Led design-adjusted analysis of a nationally representative malaria survey to estimate intervention coverage, prevalence, and treatment seeking.",
+            "Led epidemiological, spatial, and implementation analyses of malaria reactive case detection effectiveness and alternative surveillance strategies.",
         ),
     ]
     for item in projects:
@@ -438,10 +424,6 @@ def build_pdf():
                 "CEPI, LARISSA II: Novel Rift Valley Fever Vaccine Development, 2024 - Present. Role: Trial feasibility modeller.",
                 "Mr. Willem Bakhuys Roozeboomstichting, TBPS-Meta: Tuberculosis Prevalence Survey Meta Analyses, 2023. Role: Principal investigator.",
                 "Amsterdam Tuberculosis Center, scTB-Meta: Subclinical Tuberculosis Meta Analyses, 2021 - 2023. Role: Principal investigator.",
-                "EDCTP, CAGE-TB: Cough Audio Triage for Tuberculosis, 2022 - 2023. Role: Cost-effectiveness sub-study lead.",
-                "EDCTP, PreFIT: Predicting the Future: Incipient Tuberculosis, 2021 - 2023. Role: Cost-effectiveness sub-study lead.",
-                "EDCTP, TRiAD: Triage test for all oral DR TB regimen, 2020 - 2023. Role: Cost-effectiveness sub-study lead.",
-                "Wellcome Trust, ROTA-biotic: Measuring the impact of rotavirus vaccines on paediatric antibiotic usage, 2020 - 2023. Role: Statistician.",
                 "USAID, Associate Award: Technical assistance and support for community-based malaria surveillance in Tanzania, 2017 - 2019. Role: Co-investigator for sub-study.",
                 "PATH / MACEPA / Gates Foundation, technical and scientific support to MACEPA activities in Zambia, 2017 - 2019. Role: Analytic and field support.",
                 "USAID, VectorWorks, 2016 - 2019. Role: Analytic and field support.",
