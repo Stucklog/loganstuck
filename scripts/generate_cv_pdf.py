@@ -338,29 +338,54 @@ def build_pdf():
     story.extend(section("Selected projects", styles))
     projects = [
         (
-            "Data Science and Analytics Support for SHIFT2HEALTH",
+            "SHIFT2HEALTH Analytics Support",
             "2025 - Present | Wageningen University and Research",
-            "Statistical and data science support for a multi-country project studying behavioral, physiological, and environmental contributors to obesity in shift workers.",
+            "Statistical and data science support for a multi-country study of behavioral, physiological, nutritional, and environmental contributors to obesity in shift workers.",
         ),
         (
-            "Epidemiological Modeling and Trial Simulation for Rift Valley Fever Vaccine Development",
+            "Rift Valley Fever Vaccine Trial Modeling",
             "2024 - Present | LARISSA consortium",
-            "Trial feasibility modeling, power simulations, and statistical methods guidance for Phase II and future vaccine evaluation.",
+            "Epidemiological modeling, power calculations, and trial simulations for hRVFV-4s vaccine evaluation strategy.",
         ),
         (
-            "Predictive Analytics for Amsterdam Quay Wall and Bridge Deterioration",
-            "2024 - Present | City of Amsterdam",
-            "Predictive modeling using spatio-temporal, geotechnical, laboratory, satellite, and structural monitoring data to support risk prioritization.",
-        ),
-        (
-            "Multi-Country IPD Meta-Analysis on Subclinical Tuberculosis Prevalence",
+            "Subclinical Tuberculosis IPD Meta-Analysis",
             "2021 - 2024 | Amsterdam Institute for Global Health and Development",
-            "Led data collection, harmonization, and design-adjusted analysis for a Lancet Infectious Diseases study of national tuberculosis prevalence surveys.",
+            "Led data collection, harmonization, and design-adjusted analysis across national TB prevalence surveys for a Lancet Infectious Diseases study.",
         ),
         (
-            "Assessment of the Zimbabwe Assistance Program in Malaria",
+            "BCG Vaccine Effectiveness IPD Meta-Analysis",
+            "2022 - 2024 | Amsterdam Institute for Global Health and Development",
+            "Provided methodological guidance on study design, data harmonization, statistical modeling, interpretation, and manuscript development for a Lancet Microbe study.",
+        ),
+        (
+            "Drug-Resistant TB Diagnostic Economic Evaluation",
+            "2021 - 2023 | CAPRISA 094 TRIAD study",
+            "Led cost-effectiveness and budget impact modeling for Xpert MTB/XDR implementation in multi-country drug-resistant TB care.",
+        ),
+        (
+            "Trachoma Prevention Program Evaluation",
+            "2020 - 2021 | Tulane University and Sightsavers",
+            "Conducted design-adjusted analysis and supported reporting for facial cleanliness and environmental improvement interventions across Malawi, Tanzania, and Uganda.",
+        ),
+        (
+            "Zimbabwe Assistance Program in Malaria Assessment",
             "2019 - 2020 | Data for Impact and USAID",
-            "Directed an evaluation integrating quantitative routine data analysis and qualitative research to inform malaria control strategy.",
+            "Directed a mixed-methods evaluation integrating routine data analysis and qualitative research to inform PMI, USAID, and national malaria program strategy.",
+        ),
+        (
+            "Reactive Case Detection in Zanzibar",
+            "2016 - 2019 | Tulane University",
+            "Led epidemiological, spatial, and economic analyses of malaria reactive case detection effectiveness, cost, and alternative surveillance strategies.",
+        ),
+        (
+            "Tanzania School Net Programme",
+            "2016 - 2019 | Tulane University",
+            "Supported survey design, field team training, data quality monitoring, and statistical analysis of school-based LLIN distribution for malaria prevention.",
+        ),
+        (
+            "Ethiopia Malaria Indicator Survey",
+            "2016 | Tulane University",
+            "Led design-adjusted analysis of a nationally representative malaria survey to estimate intervention coverage, prevalence, and treatment seeking.",
         ),
     ]
     for item in projects:
@@ -411,7 +436,6 @@ def build_pdf():
             bullet_list(
             [
                 "CEPI, LARISSA II: Novel Rift Valley Fever Vaccine Development, 2024 - Present. Role: Trial feasibility modeller.",
-                "City of Amsterdam, Modelling Deterioration of Amsterdam Quay Walls, 2024 - Present. Role: Primary analyst.",
                 "Mr. Willem Bakhuys Roozeboomstichting, TBPS-Meta: Tuberculosis Prevalence Survey Meta Analyses, 2023. Role: Principal investigator.",
                 "Amsterdam Tuberculosis Center, scTB-Meta: Subclinical Tuberculosis Meta Analyses, 2021 - 2023. Role: Principal investigator.",
                 "EDCTP, CAGE-TB: Cough Audio Triage for Tuberculosis, 2022 - 2023. Role: Cost-effectiveness sub-study lead.",
