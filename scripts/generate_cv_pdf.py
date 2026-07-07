@@ -270,7 +270,7 @@ def build_pdf():
     story.append(
         role(
             "2020 - 2023",
-            "Postdoctoral Epidemiologist and Statistician",
+            "Epidemiologist and Statistician",
             "Amsterdam Institute for Global Health and Development | Amsterdam, Netherlands",
             [
                 "Designed and conducted analyses for global health research projects, including clinical trials, individual participant data meta-analyses, and program evaluations.",
