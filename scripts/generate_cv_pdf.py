@@ -224,7 +224,7 @@ def build_pdf():
     story.append(p("Public Health Evaluation | Epidemiology | Applied Statistics | Data Science", styles["Headline"]))
     story.append(
         Paragraph(
-            "Maasbommel, Netherlands | logan.stuck@gmail.com | "
+            "Maasbommel, Netherlands | logan@loganstuck.com | "
             '<link href="https://loganstuck.com" color="#0e6f68">loganstuck.com</link>',
             styles["Contact"],
         )
