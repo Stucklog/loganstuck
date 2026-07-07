@@ -340,6 +340,17 @@ h3 {
   font-weight: 850;
 }
 
+.headshot-image {
+  width: 190px;
+  aspect-ratio: 1;
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: var(--radius);
+  object-fit: cover;
+  object-position: center;
+  background: rgba(18, 33, 31, 0.18);
+}
+
 .panel-title {
   margin: 0;
   color: white;
