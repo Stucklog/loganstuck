@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import html
 import json
 import re
@@ -60,6 +61,8 @@ def main() -> None:
     title = html.escape(metadata["title"])
     subtitle = html.escape(metadata["subtitle"])
     preview = html.escape(metadata["preview"], quote=True)
+    stylesheet = ROOT / "assets" / "css" / "styles.css"
+    stylesheet_version = hashlib.sha256(stylesheet.read_bytes()).hexdigest()[:12]
 
     page = f"""<!doctype html>
 <html lang="en">
@@ -76,7 +79,7 @@ def main() -> None:
     <meta property="og:image" content="https://loganstuck.com/assets/images/global-health-land-cruiser.webp">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css?v={stylesheet_version}">
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
