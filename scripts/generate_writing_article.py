@@ -24,7 +24,10 @@ def render_markdown(source: str) -> str:
         if not line:
             continue
         if line == "---":
-            blocks.append("        <hr>")
+            blocks.append(
+                '        <div class="article-break" role="separator" '
+                'aria-label="Section break"><span aria-hidden="true">...</span></div>'
+            )
             continue
 
         image_match = IMAGE_PATTERN.match(line)
