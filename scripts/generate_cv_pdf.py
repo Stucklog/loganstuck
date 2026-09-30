@@ -8,8 +8,10 @@ from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import inch
 from reportlab.pdfbase.pdfdoc import PDFInfo
 from reportlab.platypus import (
+    CondPageBreak,
     HRFlowable,
     KeepTogether,
+    PageBreak,
     Paragraph,
     SimpleDocTemplate,
     Spacer,
@@ -40,10 +42,13 @@ def bullet_list(items, styles):
 
 
 def section(title, styles):
+    rule = HRFlowable(width="100%", thickness=0.7, color=LINE, spaceBefore=5, spaceAfter=9)
+    rule.keepWithNext = True
     return [
+        CondPageBreak(130),
         Spacer(1, 16),
         p(title.upper(), styles["SectionHeading"]),
-        HRFlowable(width="100%", thickness=0.7, color=LINE, spaceBefore=5, spaceAfter=9),
+        rule,
     ]
 
 
@@ -131,6 +136,7 @@ def build_styles():
             textColor=INK,
             spaceBefore=2,
             spaceAfter=0,
+            keepWithNext=True,
         )
     )
     base.add(
@@ -196,10 +202,10 @@ def set_metadata(canvas, _doc):
     if isinstance(info, PDFInfo):
         info.title = "Logan Stuck - ATS-Friendly CV"
         info.author = "Logan Stuck"
-        info.subject = "Public health evaluation, epidemiology, applied statistics, and data science CV"
+        info.subject = "Public health evaluation, household surveys, epidemiology, and evidence-informed decision support CV"
         info.keywords = (
-            "public health evaluation, monitoring and evaluation, MEL, epidemiology, "
-            "statistics, biostatistics, data science, global health, R, program evaluation"
+            "public health evaluation, household surveys, programme evaluation, monitoring and evaluation, "
+            "MERL, epidemiology, biostatistics, GIS, global health, malaria, tuberculosis, R, ODK"
         )
 
 
@@ -215,13 +221,13 @@ def build_pdf():
         bottomMargin=0.68 * inch,
         title="Logan Stuck - ATS-Friendly CV",
         author="Logan Stuck",
-        subject="Public health evaluation, epidemiology, applied statistics, and data science CV",
+        subject="Public health evaluation, household surveys, epidemiology, and evidence-informed decision support CV",
         creator="ReportLab",
     )
 
     story = []
     story.append(p("Logan Stuck", styles["Name"]))
-    story.append(p("Public Health Evaluation | Epidemiology | Applied Statistics | Data Science", styles["Headline"]))
+    story.append(p("Public Health Evaluation and Evidence Specialist", styles["Headline"]))
     story.append(
         Paragraph(
             "Maasbommel, Netherlands | logan@loganstuck.com | "
@@ -232,10 +238,28 @@ def build_pdf():
     story.append(
         p(
             "Public health evaluation and evidence specialist with expertise in epidemiology, "
-            "monitoring and evaluation, statistical modeling, and data-informed decision support. "
-            "Experience spans global health, academic research, consulting, and applied analytics, "
-            "with collaborations across the United States, the Netherlands, Ethiopia, Ghana, South "
-            "Africa, Tanzania, Uganda, Zanzibar, Zambia, and Zimbabwe.",
+            "household surveys, monitoring and evaluation, applied statistics, GIS, and evidence-informed "
+            "decision support. PhD in epidemiology focused on malaria evaluation and elimination in "
+            "Zanzibar, and a master's in biostatistics. More than one year of cumulative professional "
+            "experience in sub-Saharan Africa, including living in Zanzibar. Works with research and "
+            "implementation partners to translate findings for governments, NGOs, funders, and other "
+            "decision-makers.",
+            styles["Body"],
+        )
+    )
+    story.append(
+        p(
+            "Focus: household-survey-based programme evaluation conducted with institutions and "
+            "researchers in low- and middle-income countries. Interested in research and evaluation "
+            "roles and independent consultancies spanning malaria, tuberculosis, and broader public "
+            "health and international development.",
+            styles["Body"],
+        )
+    )
+    story.append(
+        p(
+            "Collaborations across the United States, the Netherlands, Ethiopia, Ghana, South Africa, "
+            "Tanzania, Uganda, Zambia, and Zimbabwe.",
             styles["Body"],
         )
     )
@@ -243,12 +267,13 @@ def build_pdf():
     story.extend(section("Core skills", styles))
     story.append(
         p(
-            "Evaluation and MEL: program evaluation, monitoring, evaluation, and learning, "
-            "stakeholder reporting, evidence-to-decision support. Methods: epidemiology, biostatistics, "
-            "causal inference, survival analysis, survey methodology, clinical trial simulation, "
-            "predictive modeling, geospatial analysis. Public health domains: infectious disease "
-            "surveillance, tuberculosis, malaria, vaccine evaluation, implementation research. "
-            "Tools: R, SAS, STATA, QGIS, ArcGIS, ODK, Git, LaTeX.",
+            "Evaluation: programme and intervention evaluation, mixed-methods evaluation, monitoring "
+            "and evaluation, implementation research, evidence translation, stakeholder reporting. "
+            "Surveys and fieldwork: study design, sampling, weighting, questionnaire development, "
+            "digital data collection, field-team training, data-quality assurance. "
+            "Analysis: epidemiology, biostatistics, complex survey analysis, GIS and spatial analysis, "
+            "data visualisation, reproducible reporting, statistical modelling. "
+            "Tools: R, R Markdown, Shiny, ggplot2, QGIS, ArcGIS, ODK, SAS, STATA, Git, LaTeX.",
             styles["Body"],
         )
     )
@@ -256,12 +281,12 @@ def build_pdf():
     story.extend(section("Professional experience", styles))
     story.append(
         role(
-            "2024 - Present",
+            "2024 - February 2027",
             "Applied Statistician",
             "Biometris, Wageningen University and Research | Wageningen, Netherlands",
             [
                 "Provide statistical consulting for public health and applied research teams, including multi-country analytics for SHIFT2HEALTH.",
-                "Design analyses, predictive models, and study workflows that connect complex health data to practical decisions.",
+                "Design studies, analyses, and reproducible workflows that connect complex health data to practical decisions.",
                 "Collaborate with researchers, policymakers, and implementation partners to align statistical methods with real-world evidence needs.",
                 "Translate complex analytical results into clear recommendations, reports, and decision-ready outputs.",
             ],
@@ -274,9 +299,9 @@ def build_pdf():
             "Epidemiologist and Statistician",
             "Amsterdam Institute for Global Health and Development | Amsterdam, Netherlands",
             [
-                "Led analyses for global health studies spanning clinical trials, individual participant data meta-analyses, and program evaluations.",
-                "Coordinated and harmonized national TB prevalence survey data across Africa and Asia, contributing to policy-relevant Lancet Infectious Diseases evidence.",
-                "Applied causal inference, survival analysis, survey methods, and statistical modeling to assess infectious disease burden and intervention performance.",
+                "Led analyses for programme evaluations, national TB prevalence surveys, individual participant data meta-analyses, and clinical trials.",
+                "Coordinated and harmonised national TB prevalence survey data with ministry and research partners across Africa and Asia, contributing to Lancet Infectious Diseases evidence.",
+                "Applied complex survey methods, causal inference, survival analysis, and statistical modelling to assess infectious-disease burden and intervention performance.",
                 "Mentored PhD and MSc students and translated complex findings for manuscripts, collaborators, and public health stakeholders.",
             ],
             styles,
@@ -301,9 +326,9 @@ def build_pdf():
             "Postdoctoral Statistician, Epidemiologist, and Data Scientist",
             "Tulane University School of Public Health and Tropical Medicine | New Orleans, Louisiana",
             [
-                "Conducted malaria program evaluations assessing intervention effectiveness, transmission patterns, and surveillance performance.",
-                "Led epidemiological modeling and statistical analyses that informed malaria control and elimination strategies.",
-                "Provided on-site training for household survey data collection, improving data quality and field implementation rigor.",
+                "Conducted malaria programme evaluations assessing intervention effectiveness, transmission patterns, and surveillance performance.",
+                "Led epidemiological and statistical analyses that informed malaria control and elimination strategies.",
+                "Provided on-site training for household-survey data collection, strengthening data quality and field implementation.",
                 "Contributed to peer-reviewed publications, grant development, and capacity-building initiatives in malaria research.",
             ],
             styles,
@@ -315,9 +340,9 @@ def build_pdf():
             "Research Assistant",
             "Tulane University School of Public Health and Tropical Medicine | New Orleans, Louisiana",
             [
-                "Led evaluation of reactive case detection for malaria in Zanzibar, including effectiveness, spatial targeting, and implementation analyses.",
-                "Synthesized evidence on diagnostic accuracy and geospatial prevalence mapping to clarify malaria transmission patterns.",
-                "Collaborated with local health authorities and global malaria programs to translate findings into implementation strategy.",
+                "Led evaluation of reactive case detection for malaria in Zanzibar, from study design and field implementation to epidemiological and spatial analysis.",
+                "Supported questionnaire development, field-team training, data-quality monitoring, and household-survey analysis for malaria intervention evaluations.",
+                "Collaborated with health authorities and malaria programmes to translate findings into implementation strategy.",
             ],
             styles,
         )
@@ -336,42 +361,52 @@ def build_pdf():
         )
     )
 
-    story.extend(section("Selected projects", styles))
+    story.extend(section("Selected evaluation and research projects", styles))
     projects = [
         (
-            "SHIFT2HEALTH Analytics Support",
-            "2025 - Present | Wageningen University and Research",
-            "Statistical and data science support for a multi-country study of behavioral, physiological, nutritional, and environmental contributors to obesity in shift workers.",
+            "Reactive Case Detection in Zanzibar",
+            "2016 - 2019 | Tulane University",
+            "Led study design, field implementation, and epidemiological and spatial analyses of malaria reactive case detection, translating findings with health authorities into options for elimination surveillance.",
         ),
         (
-            "Rift Valley Fever Vaccine Trial Modeling",
-            "2024 - Present | LARISSA consortium",
-            "Epidemiological modeling, power calculations, and trial simulations for hRVFV-4s vaccine evaluation strategy.",
+            "Tanzania School Net Programme",
+            "2016 - 2019 | Tulane University",
+            "Supported questionnaire development, field-team training, data-quality monitoring, and household-survey analysis to evaluate school-based distribution of insecticide-treated nets.",
         ),
         (
-            "Subclinical Tuberculosis IPD Meta-Analysis",
-            "2021 - 2024 | Amsterdam Institute for Global Health and Development",
-            "Led data collection, harmonization, and design-adjusted analysis across national TB prevalence surveys for a Lancet Infectious Diseases study.",
-        ),
-        (
-            "BCG Vaccine Effectiveness IPD Meta-Analysis",
-            "2022 - 2024 | Amsterdam Institute for Global Health and Development",
-            "Provided methodological guidance on study design, data harmonization, statistical modeling, interpretation, and manuscript development for a Lancet Microbe study.",
-        ),
-        (
-            "Trachoma Prevention Program Evaluation",
-            "2020 - 2021 | Tulane University and Sightsavers",
-            "Conducted design-adjusted analysis and supported reporting for facial cleanliness and environmental improvement interventions across Malawi, Tanzania, and Uganda.",
+            "Ethiopia Malaria Indicator Survey",
+            "2016 | Tulane University",
+            "Led design-adjusted analysis of a national household survey, including weighting, malaria prevalence, intervention coverage, and geographic differences, contributing to the official report for health authorities and partners.",
         ),
         (
             "Zimbabwe Assistance Program in Malaria Assessment",
             "2019 - 2020 | Data for Impact and USAID",
-            "Directed a mixed-methods evaluation integrating routine data analysis and qualitative research to inform PMI, USAID, and national malaria program strategy.",
+            "Directed a mixed-methods evaluation combining routine programme data and qualitative research, with recommendations for PMI, USAID, and national malaria programme strategy.",
         ),
         (
-            "Reactive Case Detection in Zanzibar",
-            "2016 - 2019 | Tulane University",
-            "Led epidemiological, spatial, and implementation analyses of malaria reactive case detection effectiveness and alternative surveillance strategies.",
+            "Subclinical Tuberculosis IPD Meta-Analysis",
+            "2021 - 2024 | Amsterdam Institute for Global Health and Development",
+            "Led data coordination, harmonisation, and design-adjusted analysis across national TB prevalence surveys in Africa and Asia, working with ministry and research partners to produce policy-relevant evidence.",
+        ),
+        (
+            "Trachoma Prevention Programme Evaluation",
+            "2020 - 2021 | Tulane University and Sightsavers",
+            "Analysed pre- and post-intervention surveys from more than 3,000 households and 100 schools in Malawi, Tanzania, and Uganda, translating findings into recommendations for hygiene and sanitation programmes.",
+        ),
+        (
+            "BCG Vaccine Effectiveness IPD Meta-Analysis",
+            "2022 - 2024 | Amsterdam Institute for Global Health and Development",
+            "Provided methodological guidance on study design, data harmonisation, statistical modelling, interpretation, and manuscript development for a Lancet Microbe study.",
+        ),
+        (
+            "SHIFT2HEALTH Analytics Support",
+            "2025 - Present | Wageningen University and Research",
+            "Statistical and data science support for a multi-country study of behavioural, physiological, nutritional, and environmental contributors to obesity in shift workers.",
+        ),
+        (
+            "Rift Valley Fever Vaccine Trial Modelling",
+            "2024 - Present | LARISSA consortium",
+            "Epidemiological modelling, power calculations, and trial simulations for hRVFV-4s vaccine evaluation strategy.",
         ),
     ]
     for item in projects:
@@ -405,6 +440,7 @@ def build_pdf():
         )
     )
 
+    story.append(PageBreak())
     story.extend(section("Selected publications", styles))
     publications = [
         "Pelzer P.T., Stuck L., et al. Effectiveness of the primary Bacillus Calmette-Guerin vaccine against the risk of Mycobacterium tuberculosis infection and tuberculosis disease: a meta-analysis of individual participant data. The Lancet Microbe, 2025.",

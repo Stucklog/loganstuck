@@ -129,7 +129,7 @@ def main() -> None:
             <span class="brand-mark">LS</span>
             <span>Logan Stuck</span>
           </a>
-          <p>Public health evaluation, epidemiology, and data science.</p>
+          <p>Public health evaluation, household surveys, and evidence for decisions.</p>
         </div>
         <div class="footer-links" aria-label="Footer navigation">
           <a href="about.html">About</a>
