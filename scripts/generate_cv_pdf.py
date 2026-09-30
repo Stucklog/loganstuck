@@ -231,7 +231,9 @@ def build_pdf():
     story.append(
         Paragraph(
             "Maasbommel, Netherlands | logan@loganstuck.com | "
-            '<link href="https://loganstuck.com" color="#0e6f68">loganstuck.com</link>',
+            '<link href="https://loganstuck.com" color="#0e6f68">loganstuck.com</link><br/>'
+            'Netherlands: <link href="tel:+31627377850" color="#0e6f68">+31 6 2737 7850</link> | '
+            'United States: <link href="tel:+15042332873" color="#0e6f68">+1 504 233 2873</link>',
             styles["Contact"],
         )
     )
